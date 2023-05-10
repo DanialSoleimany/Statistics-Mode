@@ -1,27 +1,26 @@
-list = []
-for i in range(1, 3):
-    name = str(input("name: "))
-    tedad = int(input("tedad: "))
-    for j in range(1, tedad+1):
-        nomre = float(input("nomre: "))
-        list.append(nomre)
-        count = 0
-        
-mode = "No mode"        
-for i in range(0, len(list)):
-    temp = list.count(list[i])
-    if (temp > count):
-        count = temp
-        index = i
-                
-if (count > 1):
-    mode = list[index]
+l1 = []
+l2 = []
+mode = []
 
-print("{0}".format(mode))
+for i in range(1, 7):
+    x = float(input("num: "))
+    l1.append(x)
 
+for i in range(0, len(l1)):
+    l2.append(l1.count(l1[i]))
 
-
-        
-    
-    
-        
+if(max(l2) == 1):
+    print("No mode")
+if(max(l2) > 1):
+    for i in range(0, len(l2)):
+        if(l2[i] == max(l2)):
+            mode.append(l1[i])
+    set = set(mode)
+    mode = list(set)
+    if(len(mode) > 1):
+        print("More than one mode")
+        print(mode)
+    else:
+        mode = list(set)
+        print("One mode")
+        print(mode)
